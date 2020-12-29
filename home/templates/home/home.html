@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Social Network</title>
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+</head>
+
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand">Social Network</a>
+    <ul class="nav">
+        {% if request.user.is_authenticated %}
+      <li class="active"><a href="#">Hello, {{request.user.username}}</a></li>
+        {% endif %}
+      {% if request.user.is_authenticated %}
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'account' %}">Profile</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      {% else %}
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'register' %}">Register</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+<section id="main">
+	<section id="page">
+    <article>
+
+        <div class="share">
+          <form class="sent-post" action="" method="post">
+              {% csrf_token %}
+            <button>
+                <a class href="{% url 'publications:create' %}">Create post</a></button>
+          </form>
+        </div>
+    </article>
+
+        {% for post in blog_posts %}
+    <article>
+        <div class="header">
+        <img src="{{post.image.url}}" width="100%" height="300px" class="img-polaroid" margin-right:10px;>
+            <p class="user-profile">created by</p>
+            <a class="user-profile">{{post.author}}</a>
+        </div>
+        <p class="user-profile">{{post.title}}</p>
+    <div class="publication">
+    <p>{{post.body|linebreaksbr|truncatechars:250}}</p>
+  </div>
+    <div class="post-info">
+      <div class="post-info-box"><i class="icon-calendar"></i><p class="author">Published: {{post.date_updated}}</p></div>
+    <div class="post-info-box"><i class="icon-user"></i><p class="author">was there {{post.author.last_login}}</p></div>
+            <div class="post-info-box">
+                <a class="like" href="">
+                    <img src="{% static 'img/like2.png' %}" width="14" height="14" alt="like">
+                    <a class="like-count"> 15096</a>
+            </div>
+            <div class="post-info-box"><a class="dislike" href="">
+                <img src="{% static 'img/dislike.png' %}" width="14" height="14" alt="dislike"> <a class="dislike-count"> 10</a></div>
+            </div>
+
+    </article>
+{% endfor %}
+
+
+    <hr>
+    <div class="pagination">
+  	<ul>
+    	<li><a href="#">Prev</a></li>
+    	<li><a href="#">1</a></li>
+    	<li><a href="#">2</a></li>
+    	<li><a href="#">3</a></li>
+    	<li><a href="#">4</a></li>
+    	<li><a href="#">5</a></li>
+    	<li><a href="#">Next</a></li>
+  	</ul>
+	</div>
+  </section>
+</section>
+<footer>
+	<p>Copyright &copy; 2020 by <a href="">KonstantineMariak</a> All right reserved</p>
+</footer>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script>
+$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+</script>
+</body>
+</html>
+

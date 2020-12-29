@@ -1,0 +1,182 @@
+* {
+	margin:0px;
+	padding:0px
+}
+body {
+	background:#FFF;
+	font-family: 'Roboto' ;
+	color:#1E1E1E;
+}
+.logo {
+	float:left;
+	color:#FFF;
+	font-family: 'Roboto' ;
+	margin:18px 25px 18px 25px;
+}
+
+#main {
+	margin:10px auto;
+	padding:0px;
+	width:990px;
+	height:auto;
+}
+
+#page {
+	padding:5px;
+	margin:auto;
+	width:620px;
+	height:auto;
+	background:#FFF;
+	
+	
+}
+aside {
+	width:330px;
+	height:900px;
+	float:left;	
+}
+aside h2 {
+	font-family: Roboto, "Roboto Condensed";
+	text-align:center;
+	margin-top:-10px;
+	border-bottom:1px solid #EAEAEA;
+	font-size:18px;
+}
+.aside-box {
+	padding:10px 5px 5px 10px;
+	margin:auto;
+	margin-bottom:10px;
+	border:1px solid #AAA;
+	border-radius:5px;
+	background:#FFF;
+}
+
+article {
+	padding:30px 5px 5px 10px;
+	margin:auto;
+	margin-bottom:10px;
+	border-radius:5px;
+	background:#FFF;
+}
+article h2 {
+	font-family: "Roboto", "Roboto Condensed", "Segoe UI", "Segoe UI Semibold";
+	text-align:left;
+	margin-top:-10px;
+	font-size:18px;
+}
+article .post-info {
+	height:20px;
+	width:100%;
+	padding:5px;
+}
+article .post-info-box {
+	height:20px;
+	width:120px;
+	padding:5px;
+	float:left;
+}
+article .author {
+	font-family:"Segoe UI Light", "Segoe UI", "Segoe UI Semibold";
+	text-align:left;
+	margin-top:-2px;
+	margin-left:10px;
+	font-size:12px;
+	color:#000;
+}
+article p {
+	font-family:"Segoe UI Light", "Segoe UI", "Segoe UI Semibold";
+	text-align:justify;
+	font-size:14px;
+}
+
+footer {
+	margin:20px 0;
+	margin-bottom:0px;
+	width:100%;
+	height:100px;
+	background:#f2f2f2;
+}
+footer p {
+	font-family:"Segoe UI Light", "Segoe UI", "Segoe UI Semibold";
+	text-align:center;
+	margin:auto;
+	margin-top:20px;
+	font-size:16px;
+	color:#000;
+}
+
+div a.user-profile{
+	text-decoration: none;
+	font-family:"Roboto", "Segoe UI", "Segoe UI Semibold";
+	text-align:center;
+	font-size:18px;
+	color:#000;
+	margin-top: 20px;
+}
+
+a.was-there {
+	padding-left: 15px;
+	padding-top: 20px;
+	
+}
+
+div.header {
+	margin-bottom: 30px;
+}
+
+div.publication {
+}
+
+
+a .like {
+	float: left;
+}
+
+div a.like-count{
+	text-decoration: none;
+}
+
+div a.dislike-count{
+	text-decoration: none;
+}
+
+div.share {
+	padding-top: 20px;
+}
+.share textarea {
+    width: 98%;
+    height: 300px;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    font-size: 17px;
+    display: block;
+    margin-top: 20px;
+    resize: none;
+    border-radius: 80px;
+}
+
+div.share button {
+	text-align: center;
+    display: block;
+    text-decoration: none;
+    width: 230px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.45);
+    background: #fff;
+	background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+	border-radius: 80px;
+	margin: auto;
+}
+
+div.share button:hover {
+	color: rgb(197, 78, 110);
+	border: 1px solid rgb(197, 78, 110)
+}
+
+

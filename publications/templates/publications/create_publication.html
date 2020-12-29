@@ -1,0 +1,78 @@
+<!Doctype html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Social Network</title>
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+</head>
+
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Social Network</a>
+    <ul class="nav">
+        {% if request.user.is_authenticated %}
+      <li class="active"><a href="#">Hello, {{request.user.username}}</a></li>
+        {% endif %}
+      {% if request.user.is_authenticated %}
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'account' %}">Profile</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      {% else %}
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'register' %}">Register</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+<section id="main">
+	<section id="page">
+    <article>
+        <div class="share">
+        <form class="create-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+				<!-- title -->
+				<div class="form-group">
+					<label for="id_title"></label>
+					<input class="form-control" style="width: 100%; border-radius: 100px;" type="text" name="title" id="id_title" placeholder="Title" required autofocus>
+				</div>
+
+				<!-- Body -->
+				<div class="form-group">
+					<label for="id_body"></label>
+					<textarea class="form-control"  style="padding-left: 50px;" rows="10" type="text" name="body" id="id_body" placeholder="This blog is about..." required></textarea>
+				</div>
+
+				<!-- Image -->
+				<div class="form-group">
+					<label for="id_image">Image</label>
+					<input  type="file" name="image" id="id_image" accept="image/*" required>
+				</div>
+
+				<!-- Submit btn -->
+				<button class="submit-button btn btn-lg btn-primary btn-block" type="submit">POST</button>
+			</form>
+        </div>
+    </article>
+   
+
+    <hr>
+  </section>
+</section>
+
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script>
+$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+</script>
+</body>
+</html>
